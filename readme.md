@@ -68,5 +68,9 @@ La arquitectura que adoptaremos tendra una capa api, una capa de servicio y una 
 ![img](/doc/arquitectura.png "...")
 
 
+Para eso crearemos una carpeta student que tendra el controlador que es la api StudentController.
+el servicio que tendra la logica de negocio StudentService.
+y la capa de acceso a datos la agregaremos despues, mientras tanto tendremos la Entidad Student que sera la clase que representara la tabla student. 
+
 
 ## La base de datos postgres, esta en docker.

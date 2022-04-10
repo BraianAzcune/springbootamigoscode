@@ -36,7 +36,7 @@ https://start.spring.io/
 
 basta con hacer click al boton:
 
-![img](/doc/iniciarApp.png "...").
+![img](/doc/iniciarApp.png "...")
 
 cuando trates de ejecutarla, fallara, 
 
@@ -53,6 +53,19 @@ nos mostrara un error el tomcat de que no hay ningun end point.
 
 ## crear una api
 
+Para hacer una api rest basta con anotar a la clase con **@RestController**, y a sus metodos con **@GetMapping**, para que el metodo acepte peticiones Get. Tambien existe **PostMapping**, **PutMapping**, **DeleteMapping**.
+
+### nota:
+si retornamos un array, le agrega los corchetes.
+y lo devuleve como Content-Type: application/json
+
+
+si creamos una clase Student con propiedades, constructor, y getters y setters,
+y retornamos una lista de ellos nos devolvera los objetos en formato json.
+
+La arquitectura que adoptaremos tendra una capa api, una capa de servicio y una capa de acceso a datos.
+
+![img](/doc/arquitectura.png "...")
 
 
 

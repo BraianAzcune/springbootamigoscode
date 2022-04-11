@@ -28,6 +28,10 @@ public class StudentService {
         this.studentRepository.save(student);
     }
 
+    public void deleteStudent(Long studentId) {
+        this.studentRepository.findById(studentId).ifPresent(this.studentRepository::delete);
+    }
+
     // private int vecesLlamado = 0;
     // public List<Student> getStudents() {
     // vecesLlamado++;

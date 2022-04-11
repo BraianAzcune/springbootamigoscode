@@ -225,3 +225,10 @@ en application.properties agregar
 ```bash
 server.error.include-message=always
 ```
+
+## actualizar usuario PUT
+
+para actualizar el usuario se hace muy facil en StudentService utilizar la anotacion **@Transactional**.
+
+la forma en la que esta hecho actualmente, no es la mejor, un PUT deberia obligar al usuario a tener todos los datos.
+para hacer esto bien, tendria que hacerse algo similar a Nestjs, definir a la Entidad con anotaciones @NotBlank, @NotNull, etc. Y un anotador en el controlador para validar @Valid. 

@@ -174,8 +174,21 @@ docker cp pg_hba.conf amigoscode-postgres:/var/lib/postgresql/data/
 ```
 luego paramos el docker-compose, y volvemos a iniciar.
 
-# conectandonos desde spring boot
+## conectandonos desde spring boot
 
 ahora si ejecuta el comando de construccion, deberia generar la db de forma correcta.
 
 para acceder desde spring, necesitamos descomentar la dependencia **spring-boot-starter-data-jpa** en el pom.xml
+
+## Convirtiendo entidades a tablas de la db
+
+Para convertir una entidad java a una tabla de la db es bastante sencillo con spring-boot-data-jpa
+hay que agregar la anotacion **@Table** a la clase. Y la anotacion **@Entity** para hibernate el ORM.
+
+el ejemplo completo en Student.java
+
+# creando el acceso a datos
+
+ya tenemos la capa api, servicio, falta la de acceso a datos, que se hara con la interfaz StudentRepository. Que tendra la anotacion **@Repository** y extendera de JpaRepository.
+
+

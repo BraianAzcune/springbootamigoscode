@@ -31,6 +31,6 @@ public class StudentController {
 
     @GetMapping("/all")
     public List<Student> getStudents() {
-        return studentService.getStudents();
+        return studentService.getAllStudents();
     }
 }

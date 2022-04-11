@@ -192,3 +192,7 @@ el ejemplo completo en Student.java
 ya tenemos la capa api, servicio, falta la de acceso a datos, que se hara con la interfaz StudentRepository. Que tendra la anotacion **@Repository** y extendera de JpaRepository.
 
 
+### creando datos trasendentales
+
+los datos trasendentales son datos que pueden ser obtenido de otros datos y no necesitan almacenarse en la db.
+se le dice que es un dato trasendental a traves de la anotacion **@Transient**.

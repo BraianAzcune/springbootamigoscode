@@ -20,31 +20,28 @@ public class Student {
     private Long id;
 
     private String name;
+    private String email;
     private LocalDate dob;
 
     @Transient
     private Integer age;
-
-    public Integer getAge() {
-        return Period.between(this.dob, LocalDate.now()).getYears();
-    }
 
     // Hibernate requiere un default constructor, el mismo utiliza reflexion y
     // setters para establecer los datos.
     public Student() {
     }
 
-    public Student(Long id, String name, LocalDate dob) {
+    public Student(Long id, String name, LocalDate dob, String email) {
         this.id = id;
         this.name = name;
         this.dob = dob;
-
+        this.setEmail(email);
     }
 
-    public Student(String name, LocalDate dob) {
+    public Student(String name, LocalDate dob, String email) {
         this.name = name;
         this.dob = dob;
-
+        this.setEmail(email);
     }
 
     @Override
@@ -75,4 +72,17 @@ public class Student {
     public void setDob(LocalDate dob) {
         this.dob = dob;
     }
+
+    public Integer getAge() {
+        return Period.between(this.dob, LocalDate.now()).getYears();
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 }

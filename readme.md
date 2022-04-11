@@ -196,3 +196,32 @@ ya tenemos la capa api, servicio, falta la de acceso a datos, que se hara con la
 
 los datos trasendentales son datos que pueden ser obtenido de otros datos y no necesitan almacenarse en la db.
 se le dice que es un dato trasendental a traves de la anotacion **@Transient**.
+
+## permitiendo al usuario enviar datos y controlarlos.
+
+vamos a permitir al usuario enviar con POST a un usuario, y si no tiene su email mostrar una excepcion.
+ 
+
+## agregando consultas propias al StudentRepository
+
+jpa es capaz de construir consultas propias, solamente definiendo el metodo con un nombre estandar en la interfaz.
+
+```java	
+@Repository
+public interface StudentRepository extends JpaRepository<Student, Long> {
+    Optional<Student> findByEmail(String email);
+}    
+```
+tambien si queremos nosotros mismos definir la consulta se puede, arriba del metodo poner la anotacion:
+    
+```java
+    @Query("select s from Student s where s.email = ?1")
+    Optional<Student> findByEmail(String email);
+```
+
+### mostrar mensaje de errores internos de spring boot
+
+en application.properties agregar
+```bash
+server.error.include-message=always
+```

@@ -1,6 +1,7 @@
 package com.amigoscode.demo.student;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,14 @@ public class StudentService {
 
     public List<Student> getAllStudents() {
         return this.studentRepository.findAll();
+    }
+
+    public void registerStudent(Student student) {
+        Optional<Student> op = this.studentRepository.findByEmail(student.getEmail());
+        if (op.isPresent()) {
+            throw new IllegalStateException("Email registered");
+        }
+        this.studentRepository.save(student);
     }
 
     // private int vecesLlamado = 0;

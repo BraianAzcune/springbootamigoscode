@@ -1,4 +1,5 @@
 # tuturial del canal amigoscode
+
 https://www.youtube.com/watch?v=9SGDpanrc8U&ab_channel=Amigoscode 
 
 # preparacion.
@@ -231,4 +232,30 @@ server.error.include-message=always
 para actualizar el usuario se hace muy facil en StudentService utilizar la anotacion **@Transactional**.
 
 la forma en la que esta hecho actualmente, no es la mejor, un PUT deberia obligar al usuario a tener todos los datos.
-para hacer esto bien, tendria que hacerse algo similar a Nestjs, definir a la Entidad con anotaciones @NotBlank, @NotNull, etc. Y un anotador en el controlador para validar @Valid. 
+para hacer esto bien, tendria que hacerse algo similar a Nestjs, definir a la Entidad con anotaciones @NotBlank, @NotNull, etc. Y un anotador en el controlador para validar @Valid.
+
+se deja para despues. seguimos con el curso.
+
+# packaging and deployment
+
+es recomendable primero limpiar el proyecto de maeven con el comando clean.
+
+![img](/doc/comandos.png "...")
+
+luego ejecutamos Install.
+que hara validate, compile, test, package, verify, e install.
+
+para eso tiene que estar la db andando.
+
+una vez hecho esto en target/ deberia estar el .jar
+
+que podemos ejecutar 
+    
+```bash
+java -jar target/demo-0.0.1-SNAPSHOT.jar
+```
+si quieres cambiar el puerto:
+
+```bash
+java -jar target/demo-0.0.1-SNAPSHOT.jar --server.port=3000
+```
